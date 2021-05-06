@@ -16,7 +16,5 @@ costMatrix = [[0, 4, 5, 4, math.inf, math.inf, math.inf, math.inf,math.inf,math.
 
 with open( 'MatriceDesCouts.csv', 'w', encoding='UTF8') as f:
     writer = csv.writer(f)
-    
     writer.writerows(costMatrix)
-    
     print("Csv file Created")
