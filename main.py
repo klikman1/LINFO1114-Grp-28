@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from Floyd_Warshall import Floyd_Warshall
+from Dijkstra_algorithm import Dijkstra_algorithm
 import sys
 
 
@@ -28,52 +29,6 @@ def read_csv(file_name: str) -> np.array:
     return to_return
 
 
-def TheMinimum(vector, index, recentMin):
-    min = recentMin
-    theId = index
-    while index < len(vector):
-        if vector[index] <= min:
-            min = vector[index]
-            theId = index
-
-        index += 1
-
-    return min, theId
-
-
-def Dijkstra_algorithm(A):
-    L = np.zeros(len(A))
-    S = np.array([])
-    M = np.copy(A)
-    u = 0
-    v = u + 1
-    toBeReturned = np.empty((0, 10))
-
-    # I initialize the all indices of L to 'inf' except the first one
-    for i in range(1, len(M)):
-        L[i] = math.inf
-
-    # I copy the first index in S as it is the smallest distance
-    MinDist, id = TheMinimum(L, 0, len(S))
-    S = np.append(S, MinDist)
-    for i in range(len(M)):
-        u = i
-        v = u + 1
-        MinDist, id = TheMinimum(L, i, S[len(S) - 1])
-        if not (MinDist in S):
-            S = np.append(S, MinDist)
-
-        for j in range(i + 1, len(M[i])):
-            W = M[i][j]
-
-            if L[v] == math.inf or (L[u] + W) < L[v]:
-                L[v] = (L[u] + W)
-            v += 1
-        toBeReturned = np.vstack([toBeReturned, L])
-        print(S)
-
-    return toBeReturned
-
 
 def main(input_csv_file: str = "MatriceDesCouts.csv"):
     """ Executes the program :
@@ -91,6 +46,9 @@ def main(input_csv_file: str = "MatriceDesCouts.csv"):
     print(f"{'*' * 8} Floyd_Warshall Output {'*' * 8}")
     print(floyd_warshall_output)
 
+    dijkstra_output = Dijkstra_algorithm(input_matrix)
+    print(f"{'*' * 8} Dijkstra Output {'*' * 8}")
+    print(dijkstra_output)
 
 if __name__ == '__main__':
     if len(sys.argv) >= 2:
