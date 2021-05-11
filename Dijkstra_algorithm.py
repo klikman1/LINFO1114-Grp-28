@@ -40,7 +40,6 @@ def Dijkstra_algorithm(A):
         MinDist, id = TheMinimum(L, S, S[len(S)-1])
         S = np.append(S, MinDist)
         i +=1
-        print(S) 
     toBeReturned = np.vstack([toBeReturned, L])
         
     

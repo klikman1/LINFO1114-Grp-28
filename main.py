@@ -1,11 +1,8 @@
 import numpy as np
 import math
 from Floyd_Warshall import Floyd_Warshall
-<<<<<<< HEAD
 from Bellman_Ford import Bellman_Ford
-=======
 from Dijkstra_algorithm import Dijkstra_algorithm
->>>>>>> cc03b657bd2856b1a8e546985438f04656aad915
 import sys
 
 
