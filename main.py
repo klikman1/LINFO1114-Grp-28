@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from Floyd_Warshall import Floyd_Warshall
+from Bellman_Ford import Bellman_Ford
 import sys
 
 
@@ -84,12 +85,16 @@ def main(input_csv_file: str = "MatriceDesCouts.csv"):
     :return: None.
     """
     input_matrix = read_csv(input_csv_file)
-    print(f"{'*' * 8} Input Matrix From CSV {'*' * 8}")
-    print(input_matrix)
+    #print(f"{'*' * 8} Input Matrix From CSV {'*' * 8}")
+    #print(input_matrix)
 
-    floyd_warshall_output = Floyd_Warshall(input_matrix)
-    print(f"{'*' * 8} Floyd_Warshall Output {'*' * 8}")
-    print(floyd_warshall_output)
+    #floyd_warshall_output = Floyd_Warshall(input_matrix)
+    #print(f"{'*' * 8} Floyd_Warshall Output {'*' * 8}")
+    #print(floyd_warshall_output)
+
+    bellman_ford_output = Bellman_Ford(input_matrix)
+    print(f"{'*' * 8} Bellman_Ford( Output {'*' * 8}")
+    print(bellman_ford_output)
 
 
 if __name__ == '__main__':
