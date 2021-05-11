@@ -1,6 +1,7 @@
 import numpy as np
 import math
 from Floyd_Warshall import Floyd_Warshall
+from Bellman_Ford import Bellman_Ford
 from Dijkstra_algorithm import Dijkstra_algorithm
 import sys
 
@@ -48,6 +49,11 @@ def main(input_csv_file: str = "MatriceDesCouts.csv"):
     print(floyd_warshall_output)
     print()
 
+    bellman_ford_output = Bellman_Ford(input_matrix)
+    print(f"{'*' * 8} Bellman_Ford( Output {'*' * 8}")
+    print(bellman_ford_output)
+    print()
+    
     dijkstra_output = Dijkstra_algorithm(input_matrix)
     print(f"{'*' * 8} Dijkstra Output {'*' * 8}")
     print(dijkstra_output)
