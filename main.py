@@ -41,15 +41,17 @@ def main(input_csv_file: str = "MatriceDesCouts.csv"):
     input_matrix = read_csv(input_csv_file)
     print(f"{'*' * 8} Input Matrix From CSV {'*' * 8}")
     print(input_matrix)
-
+    print()
+    
     floyd_warshall_output = Floyd_Warshall(input_matrix)
     print(f"{'*' * 8} Floyd_Warshall Output {'*' * 8}")
     print(floyd_warshall_output)
+    print()
 
     dijkstra_output = Dijkstra_algorithm(input_matrix)
     print(f"{'*' * 8} Dijkstra Output {'*' * 8}")
     print(dijkstra_output)
-
+    print()
 if __name__ == '__main__':
     if len(sys.argv) >= 2:
         main(sys.argv[1])
