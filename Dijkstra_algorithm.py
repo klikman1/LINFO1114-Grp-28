@@ -3,7 +3,7 @@ import math
 
 def TheMinimumDistance(Label, passedByTheNode, sizeOfInputMatrix):
     """
-    For a given label, Calculate the shortest distance in it but first, check if the given distance isn't already in the fridge
+    For a given label, get the shortest distance of node in it but first, check if the node hasn't been visited yet
     :parameters
     Label: list
         Equivalent of L
