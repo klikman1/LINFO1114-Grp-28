@@ -50,7 +50,7 @@ def main(input_csv_file: str = "MatriceDesCouts.csv"):
     print()
 
     bellman_ford_output = Bellman_Ford(input_matrix)
-    print(f"{'*' * 8} Bellman_Ford( Output {'*' * 8}")
+    print(f"{'*' * 8} Bellman_Ford Output {'*' * 8}")
     print(bellman_ford_output)
     print()
     
