@@ -2,14 +2,20 @@ import numpy as np
 import math
 
 def Bellman_Ford(input_matrix: np.array):
-    distance_matrix = np.copy(input_matrix)
-    n = distance_matrix.shape[0]
+    distance_matrix = np.copy(input_matrix) #copy de l'input
+    n = distance_matrix.shape[0] # n -> nombre des aretes du graphe
+    """
+    pre 'distance_matrix' est la matrice de distances de taille nxn ou n est le nombre des aretes du graphe
+    post renvoie la matrice des plus courts chemins
+    post si la matrice contiene des clycles negatifs renvoie "Cycle negatif"
+    """
     for k in range(n):
         for i in range(n):
             for j in range(n):
                 w = distance_matrix[k][j]
-                if distance_matrix[i][j] > distance_matrix[i][k] + w:
-                    distance_matrix[i][j] = distance_matrix[i][k]+ w
+                if distance_matrix[i][j] > distance_matrix[i][k] + w: #etape de relaxation
+                    distance_matrix[i][j] = distance_matrix[i][k]+ w # mettre a jour les valeurs 
+    # Verification des cycles negatives
     for i in range(n):
         for j in range(n-1): 
             w = distance_matrix[i][j]       
