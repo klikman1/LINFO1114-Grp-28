@@ -4,7 +4,7 @@ In this Github, You will find our project of Maths Discrète.
 
 # Main Purpose
 
-The goal of this project was to calculate the shortest path between each pair of nodes.
+The goal of this project was to compute the shortest path between each pair of nodes of an undirected, connected and weighted graph.
 For this we had to use 3 known algorithms (Bellman-Ford, Floyd-Warshall and Dijkstra) which we had to, firstly, implement and use to find the distance. You can find more details in `Enonce.pdf` in our Git folder.
 
 # Structure of our Folder.
